@@ -169,7 +169,9 @@
           isDragging = false;
         });
               
-
+        dialog.addEventListener('close', () => {
+          dialogImage.src = "";
+        });
 
         showImage(0); // init
       }

@@ -37,8 +37,25 @@ main {
 h1 {
   font-weight: 400;
   font-size: 2.7rem;
-  margin-top: 0px;
+  margin-top: 0;
   margin-bottom: 5px;
+  text-align: center;   /* Centers title on all devices */
+  padding: 0 10px;      /* Adds a little breathing room left/right */
+}
+
+/* Responsive adjustment for smaller screens */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.3rem;   /* Smaller text on tablets/phones */
+    padding: 0 15px;   /* More horizontal padding */
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.9rem; /* Even smaller for narrow phones */
+    padding: 0 20px;
+  }
 }
 
 h2 {
@@ -60,7 +77,6 @@ h4{
   font-weight: 100;
 
 }
-
 
 
 /* Remove underline from all text inside project links */
@@ -124,8 +140,37 @@ h4{
 .media-image {
   max-width: 100%;
   height: auto;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;   /* Limit size on large screens */
+  margin: 0 auto;     /* Center horizontally */
+  overflow: hidden;
+}
+
+.video-container video {
+  width: 100%;
+  height: auto;
   display: block;
 }
+
+/* Mobile adjustment */
+@media (max-width: 768px) {
+  .video-container {
+    max-width: 100%;   /* Use full width on tablets/phones */
+  }
+
+  .video-container video {
+    max-height: 50vh;  /* Limit vertical space */
+    object-fit: cover;
+  }
+}
+
+
+
+
 
 /* Video embed wrapper */
 .video-wrapper {
@@ -173,11 +218,18 @@ h4{
   }
 }
 
-
-.contact-words{
+.contact-words {
   color: black;
+  text-align: center; /* center content, including image */
 }
 
+.contact-words img {
+  width: 100%;        /* scale to container width */
+  max-width: 500px;   /* prevent it from being too large on desktop */
+  height: auto;       /* maintain aspect ratio */
+  display: block;
+  margin: 0 auto;     /* center the image */
+}
 
 /* Poetry Page */
 .poetry-page {
@@ -270,34 +322,39 @@ hr::after {
 
 /* Filter Bar */
 .filter-bar {
-  text-align: center;
-  margin: 0px 0 10px;
+  display: flex;
+  flex-wrap: wrap;       /* Allows buttons to wrap onto multiple lines */
+  justify-content: center; /* Center them nicely */
+  gap: 6px;              /* Even spacing between buttons */
+  margin: 0 0 10px;
+  padding: 0 5px;
 }
 
 .filter-btn {
   background: none;
   border: 1px solid #ccc;
-  padding: 3px 7px;
-  margin: 0 3px;
+  padding: 6px 12px;
   cursor: pointer;
-  border-radius: 0px;
+  border-radius: 0;
   font-size: 0.9rem;
-  transition: all 0.2s ease;
   font-style: normal;
-  font-family: Amiri;
+  font-family: Amiri, serif;
+  color: #000;            /* Explicitly set text color to black */
+  transition: all 0.2s ease;
+  flex-shrink: 0;         /* Prevent buttons from squishing */
 }
 
-
 .filter-btn:hover {
-  border-color: #ffffff;
+  border-color: #000;
   color: #5f5f5f;
 }
 
 .filter-btn.active {
-  background: #000000;
+  background: #000;
   color: #fff;
   border-color: #333;
 }
+
 
 /* Responsive */
 @media (max-width: 900px) {
@@ -429,12 +486,62 @@ hr::after {
   overflow: hidden;
 }
 
-.image-viewer-light img,
-.image-viewer img {
+/* Images inside the main viewers */
+.image-viewer > img,
+.image-viewer-light > img,
+.film-viewer > img,
+.film-viewer-light > img {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
+  display: block;
 }
+
+
+/* Dialog container */
+#imageDialog {
+  display: none;          /* hidden by default */
+  padding: 0;
+  border: none;
+  background: rgba(0,0,0,0.85);
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+#imageDialog[open] {
+  display: flex;
+}
+
+/* Dialog image */
+#dialog-image {
+  max-width: 90%;       /* max width on desktop */
+  max-height: 90%;      /* never taller than viewport */
+  width: auto;
+  height: auto;
+  cursor: grab;
+  transform-origin: center center;
+  touch-action: none;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  #dialog-image {
+    max-width: 95vw;    /* almost full screen width */
+    max-height: 95vh;   /* almost full screen height */
+  }
+}
+
+
+
+
+
+
 
 .film-viewer iframe {
   width: 100%;
@@ -444,22 +551,23 @@ hr::after {
 }
 
 .work-viewer-zine {
-   position: relative;
+  position: relative;
   width: 100%;
-  height: 800px;
+  height: 800px;         /* fixed viewing window */
   border-bottom: 1px solid #000;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;  /* let iframe stretch full height */
   background: #fafafa;
-  overflow: hidden;
+  overflow: auto;        /* enable scrolling inside */
 }
 
-.work-viewer img {
+.work-viewer-zine iframe {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  border: none;
 }
+
 
 .img-prev,
 .img-next,
@@ -477,6 +585,7 @@ hr::after {
   font-size: 1.2rem;
   line-height: 1;
   z-index: 2;
+  color:#000;
 }
 
 .img-prev,
@@ -509,11 +618,13 @@ hr::after {
 
 .work-thumbnails {
   display: flex;
-  justify-content: flex-start;
-  margin: 0;
-  padding: 0;
-  border-bottom: 1px solid #000;
+  flex-wrap: wrap;         /* let thumbnails wrap onto new rows */
+  justify-content: center; /* center them neatly */
+  gap: 8px;                /* even spacing between thumbnails */
+  padding: 10px;
+
   border-top: none;
+  box-sizing: border-box;  /* keep padding inside container width */
 }
 
 .work-thumbnails img {
@@ -534,3 +645,6 @@ hr::after {
 .work-thumbnails img:hover {
   opacity: 1;
 }
+
+
+
