@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Shimmer Index – Works</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>The Shimmer Index.</h1>
+    <nav>
+      <a href="index.html">Home</a> ||   
+      <a href="works.html" class="active">Works</a> ||
+      <a href="poetry.html">Poetry, of a kind</a> ||
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main class="works-page">
+
+    <!-- Filter tags -->
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="Narrative">Narrative</button>
+      <button class="filter-btn" data-filter="Film">Film</button>
+      <button class="filter-btn" data-filter="Visuals">Visuals</button>
+      <button class="filter-btn" data-filter="Making">Making</button>
+      <button class="filter-btn" data-filter="Research">Research</button>
+    </div>
+
+    <!-- Projects Grid -->
+    <section class="projects-grid">
+
+      <article class="project Narrative Visuals Coding">
+        <a href="works-welandes.html">
+          <img src="works-welandes/Welandes Smithy 2.jpg" alt="Welandes cover">
+          <h3>Welandes</h3>
+          <p class="project-tags">Narrative • Visuals • Coding  </p>
+        </a>
+      </article>
+
+
+      <article class="project Narrative Visuals Film Research">
+        <a href="works-IIL.html">
+          <img src="works-iil/cover 6.jpg" alt="The Infinite Image Library">
+          <h3>The Infinite Image Library</h3>
+          <p class="project-tags">Narrative • Visuals • Film • Research  </p>
+        </a>
+      </article>
+
+
+      <article class="project Visuals Narrative Coding Film">
+        <a href="works-concept.html">
+          <img src="works-concept/1.png" alt="Concept design">
+          <h3>Concept design</h3>
+          <p class="project-tags">Visuals • Narrative • Coding • Film</p>
+        </a>
+      </article>
+
+
+      <article class="project Narrative Film Visuals Research Making">
+        <a href="works-cross.html">
+          <img src="works-cross/3.png" alt="Our White Cross">
+          <h3>Our White Cross</h3>
+          <p class="project-tags">Narrative • Film • Visuals • Research • Making</p>
+        </a>
+      </article>
+
+      <article class="project Making">
+        <a href="works-models.html">
+          <img src="works-models/1.jpg" alt="Making">
+          <h3>Models</h3>
+          <p class="project-tags">Making</p>
+        </a>
+      </article>
+
+      <article class="project Narrative">
+        <a href="works-compost.html">
+          <img src="works-compost/compost.PNG" alt="Compost Pile cover">
+          <h3>The Compost Pile of Experimental Anthropologists</h3>
+          <p class="project-tags">Narrative</p>
+        </a>
+      </article>
+
+      <article class="project Visuals Narrative Research">
+        <a href="works-aibureau.html">
+          <img src="works-aibureau/1.jpg" alt="The AI Bureau">
+          <h3>The AI Bureau</h3>
+          <p class="project-tags">Visuals • Narrative • Research</p>
+        </a>
+      </article>
+
+      <article class="project Making">
+        <a href="works-music.html">
+          <img src="works-music/frog drum.jpeg" alt="Music">
+          <h3>Music</h3>
+          <p class="project-tags">Making</p>
+        </a>
+      </article>
+
+
+      <article class="project Narrative Visuals Research">
+        <a href="works-Codex.html">
+          <img src="works-codex/codex.jpeg" alt="Codex Ad Infinitum">
+          <h3>Codex Ad Infinitum</h3>
+          <p class="project-tags">Narrative • Visuals • Research</p>
+        </a>
+      </article>
+
+      <article class="project Narrative">
+        <a href="poetry.html">
+          <img src="works-poetry/idea machine.jpg" alt="Poetry">
+          <h3>Poetry, of a kind</h3>
+          <p class="project-tags">Narrative</p>
+        </a>
+      </article>
+
+
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 The Shimmer Index</p>
+  </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const buttons = document.querySelectorAll('.filter-btn');
+  const projects = document.querySelectorAll('.projects-grid .project');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+
+      buttons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.getAttribute('data-filter'); 
+
+      projects.forEach(project => {
+
+        if (filter === 'all') {
+          project.classList.remove('hidden');
+          return;
+        }
+
+        if (project.classList.contains(filter)) {
+          project.classList.remove('hidden');
+        } else {
+          project.classList.add('hidden');
+        }
+      });
+    });
+  });
+});
+</script>
+
+</body>
+</html>

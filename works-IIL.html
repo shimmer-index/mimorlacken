@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welandes — The Shimmer Index</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>The Shimmer Index.</h1>
+    <nav>
+      <a href="index.html">Home</a> ||  
+      <a href="works.html">Works</a> ||
+      <a href="poetry.html">Poetry, of a kind</a> ||
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <a href="works.html" class="back-button">← Back</a>
+
+  <main class="work-card">
+
+    <!-- Title & description -->
+    <div class="work-header">
+      <h1 class="work-title">08_The Infinite Image Library</h1>
+      <p class="work-description">
+        This project primarily highlights the existence of the Infinite Image Library and its unique classification system that makes it a spatial construct needing to be understood and explored architecturally. As physical construction becomes increasingly inviolable, the Library reveals a new way to design, in Latent Space with its 800 dimensions.
+The project addresses various cynicism over the emergence and use of AI tools in image production. It highlights the fundamental need for multidisciplinary explorations of these nascent technologies, for which coherent frameworks are critically lacking .
+The animation is simultaneously ABOUT the library; can be found WITHIN the library; and is in fact OF the library. The medium is the message. And it questions the very nature of future spatial practice.
+
+      </p>
+    </div>
+
+    <!-- Film viewer -->
+    <div class="film-viewer">
+      <!-- <button class="film-prev">&larr;</button> -->
+      <iframe id="film-main"
+              src="https://player.vimeo.com/video/833134772?h=bf686c4070"
+              frameborder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen
+              style="cursor:pointer">
+      </iframe>
+      <!-- <button class="film-next">&rarr;</button> -->
+    </div>
+    <p id="film-main-caption" class="work-caption">The Infinite Image Library (10mins)</p>
+
+
+
+    <!-- Image viewer -->
+    <div class="image-viewer">
+      <button class="img-prev">&larr;</button>
+      <img id="image-main" src="works-iil/iil 1 lower.jpg" style="cursor:pointer">
+      <button class="img-next">&rarr;</button>
+    </div>
+
+    <dialog id="imageDialog" style="padding:0;border:none;">
+      <img id="dialog-image" src="iil 1 lower.jpg"
+          style="max-width:90vw;max-height:90vh;display:block;margin:auto;cursor:pointer">
+    </dialog>
+
+    <!-- Caption under the main image -->
+    <p id="work-main-caption" class="work-caption">The Knowledge Forager</p>
+
+    <!-- Image thumbnails -->
+    <div class="work-thumbnails image-thumbnails">
+      <img src="works-iil/1.jpg" data-src="works-iil/iil 1 lower.jpg"  data-caption="The Knowledge Forager's journey"> 
+      <img src="works-iil/2.jpg" data-src="works-iil/iil 2 lower.jpg"data-caption="The Mathematicians's Explanation">
+      <img src="works-iil/3.jpg" data-src="works-iil/iil 3 lower.jpg"data-caption="The Data Scientist's Explanation">
+      <img src="works-iil/4.jpg" data-src="works-iil/iil 4 lower.jpg"data-caption="The Librarian's Explanation">
+      <img src="works-iil/5.jpg" data-src="works-iil/iil 5 lower.jpg"data-caption="The Cartographer's Explanation">
+      <img src="works-iil/6.jpg" data-src="works-iil/iil 6 lower.jpg"data-caption="The Artist's Explanation">
+    </div>
+
+  </main>
+
+  <footer>
+    
+    <p>© 2025 The Shimmer Index</p>
+  
+  </footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welandes — The Shimmer Index</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>The Shimmer Index.</h1>
+    <nav>
+      <a href="index.html">Home</a> ||     
+      <a href="works.html">Works</a> ||
+      <a href="poetry.html">Poetry, of a kind</a> ||
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+<a href="works.html" class="back-button">← Back</a>
+
+  <main class="work-card">
+
+    <!--Title-->
+    <div class="work-header">
+      <h1 class="work-title">03_Concept Design</h1>
+      <p class="work-description">
+        Concept design
+      </p>
+    </div>
+
+    <!--Film viewer-->
+    <div class="film-viewer">
+      <button class="film-prev">&larr;</button>
+      <iframe id="film-main"
+              src="https://player.vimeo.com/video/1124341000?h=d19d17ffd6"
+              frameborder="0"
+              allow="autoplay; fullscreen; picture-in-picture,"
+              allowfullscreen
+              style="cursor:pointer">
+      </iframe>
+      <button class="film-next">&rarr;</button>
+    </div>
+
+    <!--Caption-->
+    <p id="film-main-caption" class="film-caption"></p>
+
+    <!--Film thumbnails-->
+    <div class="work-thumbnails film-thumbnails">
+      <img src="works-concept/comp 1 image.JPG" data-src="https://player.vimeo.com/video/1124341000?h=d19d17ffd6" data-caption="Looping visual test (Touchdesigner)">
+      <img src="works-concept/blobs.PNG" data-src="https://player.vimeo.com/video/1124337326?h=3862b8adc6" data-caption="Looping visual for event (Touchdesigner)">
+      <img src="works-concept/hotel-iridescence.PNG" data-src="https://player.vimeo.com/video/774729888?title=0&amp;byline=0&amp;portrait=0&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" data-caption="Hotel Iridescence, experiemental research film (After Effects, Midjourney Images)">
+    </div>
+    
+    <!--Image viewer-->
+    <div class="image-viewer-light">
+      <button class="img-prev">&larr;</button>
+      <img id="image-main" src="works-concept/1.png" style="cursor:pointer">
+      <button class="img-next">&rarr;</button>
+    </div>
+
+    <dialog id="imageDialog" style="padding:0;border:none;">
+      <img id="dialog-image" src="works-concept/1.png"
+          style="max-width:90vw;max-height:90vh;display:block;margin:auto;cursor:pointer">
+    </dialog>
+
+    <!--Caption-->
+    <p id="work-main-caption" class="work-caption">The Artist explanation</p>
+
+    <!--Image Thumbnails-->
+    <div class="work-thumbnails image-thumbnails">
+      <img src="works-concept/1.png"  data-caption="Concept artwork for AI Agent (Photoshop)">
+      <img src="works-concept/2.jpg" data-caption="Concept artwork for events space (Photoshop)">
+      <img src="works-concept/3.jpeg" data-caption="Concept artwork for events space (Photoshop)">
+      <img src="works-concept/4.jpeg" data-caption="Concept artwork for events space (Photoshop)">
+      <img src="works-concept/5.jpg" data-caption="Concept artwork for events space (Photoshop)">
+      <img src="works-concept/6.jpg" data-caption="Concept artwork for events space (Photoshop)">
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© 2025 The Shimmer Index</p>
+  </footer>
+  <script src="script.js"></script>
+
+</body>
+</html>

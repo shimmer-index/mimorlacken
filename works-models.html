@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welandes — The Shimmer Index</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <h1>The Shimmer Index.</h1>
+    <nav>
+      <a href="index.html">Home</a> ||  
+      <a href="works.html">Works</a> ||
+      <a href="poetry.html">Poetry, of a kind</a> ||
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <a href="works.html" class="back-button">← Back</a>
+
+  <main class="work-card">
+
+    <!-- Title & description -->
+    <div class="work-header">
+      <h1 class="work-title">07_Models</h1>
+      <p class="work-description">
+        A selection of things, made by hand.
+      </p>
+    </div>
+
+    <!--Image Viewer-->
+    <div class="image-viewer-light">
+      <button class="img-prev">&larr;</button>
+      <img id="image-main" src="works-models/1.jpg" style="cursor:pointer">
+      <button class="img-next">&rarr;</button>
+    </div>
+
+    <dialog id="imageDialog" style="padding:0;border:none;">
+      <img id="dialog-image" src="works-models/1.jpg"
+          style="max-width:90vw;max-height:90vh;display:block;margin:auto;cursor:pointer">
+    </dialog>
+
+    <!--Caption-->
+    <p id="work-main-caption" class="work-caption">Wind powered rainwater harvesting system, with chalk gabian foundation</p>
+
+    <!--Thumbnails-->
+    <div class="work-thumbnails image-thumbnails">   
+      <img src="works-models/1.jpg" data-caption="Wind powered rainwater harvesting system, with chalk gabian foundation">
+      <img src="works-models/2.jpg" data-caption="Early concept sketch">
+      <img src="works-models/3.jpg" data-caption="Work in progress view">
+      <img src="works-models/4.jpg" data-caption="Visual styles test">
+      <img src="works-models/5.jpg" data-caption="Work in progress view">
+      <img src="works-models/6.jpg" data-caption="Visual styles test">
+      <img src="works-models/7.jpg" data-caption="Visual styles test">
+      <img src="works-models/8.jpg" data-caption="Visual styles test">
+      <img src="works-models/9.jpg" data-caption="Visual styles test">
+      <!-- <img src="works-models/10.gif" data-caption="Visual styles test"> -->
+    </div>
+
+  </main>
+
+  <footer>
+    <p>© 2025 The Shimmer Index</p>
+  </footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
